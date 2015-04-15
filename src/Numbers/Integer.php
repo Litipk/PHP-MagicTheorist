@@ -4,6 +4,8 @@
 namespace Litipk\MagicTheorist\Numbers;
 
 use Litipk\Exceptions\InvalidArgumentTypeException;
+use Litipk\MagicTheorist\AlgebraicStructures\AlgebraicStructure;
+use Litipk\MagicTheorist\TheoreticStructure;
 
 
 /**
@@ -16,14 +18,15 @@ abstract class Integer extends Number
     /**
      * @param $value
      * @param int $base
+     * @param TheoreticStructure $theoreticStructure
      * @return BcInteger|GmpInteger
      */
-    public static function create($value, $base = 10)
+    public static function create($value, $base = 10, TheoreticStructure $theoreticStructure = null)
     {
         if (extension_loaded("gmp")) {
-            return new GmpInteger($value, $base);
+            return new GmpInteger($value, $base, $theoreticStructure);
         } else if (extension_loaded("bcmath")) {
-            return new BcInteger($value, $base);
+            return new BcInteger($value, $base, $theoreticStructure);
         } elseif ($value instanceof Integer) {
             return $value;
         }else {

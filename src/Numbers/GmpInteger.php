@@ -3,6 +3,7 @@
 
 namespace Litipk\MagicTheorist\Numbers;
 use Litipk\Exceptions\InvalidArgumentTypeException;
+use Litipk\MagicTheorist\TheoreticStructure;
 
 /**
  * Class GmpInteger
@@ -38,11 +39,12 @@ class GmpInteger extends Integer
      *
      * @param int|string|resource|\GMP|Integer $value
      * @param int $base
+     * @param TheoreticStructure $theoreticStructure This will condition how the number is operated by default.
      *
      * @throws InvalidArgumentTypeException If the $value type is not int, string,
      *                                      resource("GMP Integer"),\GMP or Integer.
      */
-    public function __construct($value, $base = 10)
+    public function __construct($value, $base = 10, TheoreticStructure $theoreticStructure = null)
     {
         if (is_int($value)) {
             $this->gmp_object = gmp_init($value);

@@ -3,10 +3,10 @@
 
 namespace Litipk\MagicTheorist\AlgebraicStructures;
 
-use \Litipk\MagicTheorist\TheoreticBit as TheoreticBit;
+use Litipk\MagicTheorist\TheoreticStructure;
 
 
-abstract class AlgebraicStructure extends TheoreticBit
+abstract class AlgebraicStructure extends TheoreticStructure
 {
 
 }
