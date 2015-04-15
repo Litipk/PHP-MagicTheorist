@@ -1,0 +1,25 @@
+{
+    "name": "litipk/php-magic-theorist",
+    "description": "A symbolic & numerical calculus package for PHP.",
+    "require": {
+        "litipk/pyphpon": "0.3.*",
+        "litipk/php-exceptions": "0.1.*"
+    },
+    "require-dev": {
+        "psy/psysh": ">=0.4.4",
+        "phpunit/phpunit": "4.5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreu Correa Casablanca",
+            "email": "castarco@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Litipk\\MagicTheorist\\": "src/"
+        }
+    }
+}
